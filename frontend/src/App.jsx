@@ -1,4 +1,4 @@
-import Home from "./components/componentlite/authentications/Home";
+import Home from "./components/componentlite/Home";
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Login from "./components/componentlite/authentications/Login";
