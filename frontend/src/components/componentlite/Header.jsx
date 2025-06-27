@@ -5,7 +5,7 @@ const Header = () => {
     <div>
       <div className="text-center">
         <div className="gap-2 m-auto flex flex-col items-center justify-center my-10">
-          <span className="px-4 py-2 bg-gray-200 text-red-600 font-bold text-2xl rounded-full">
+          <span className="px-4 py-2 mt-2 bg-gray-200 text-red-600 font-bold text-2xl rounded-full">
             No. One job hunt website
           </span>
           <h2 className="text-5xl font-bold">

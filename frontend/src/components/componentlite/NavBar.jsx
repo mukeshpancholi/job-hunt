@@ -7,7 +7,7 @@ const NavBar = () => {
   const user = false;
   return (
     <div className="bg-white">
-      <div className="flex items-center justify-between mx-auto max-w-7xl h-16 px-4 bg-[#ebf2fc]">
+      <div className="flex items-center justify-between mx-auto max-w-7xl h-16 px-4">
         <div>
           <h1 className="font-bold text-2xl">
             Job <span className="text-[#022bf8]">Portal</span>
