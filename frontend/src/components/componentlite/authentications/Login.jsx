@@ -6,7 +6,6 @@ import axios from "axios";
 import { toast } from "sonner";
 import { useDispatch, useSelector } from "react-redux";
 import { setLoading } from "../../../reduxstore/authSlice";
-import store from "../inputfileds";
 
 const Login = () => {
   const [input, setInput] = useState({
@@ -17,7 +16,7 @@ const Login = () => {
 
   const navigate = useNavigate();
   const dispatch = useDispatch(); // fixed dispatch import
-  const { loading } = useSelector((store) => auth);
+  const { loading } = useSelector((state) => state.auth); // fixed selector import
 
   const changeEventHandle = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });
@@ -56,54 +55,71 @@ const Login = () => {
         <div className="cart fluid">
           <div className="row">
             <div className="col-12 header">
-              <form onSubmit={submitHandler}>
-                <h1>Login here</h1>
+              <form
+                onSubmit={submitHandler}
+                className="max-w-md mx-auto bg-white p-8 rounded-lg shadow-md space-y-6"
+              >
+                <h1 className="text-3xl font-bold text-center text-purple-700 mb-4">
+                  Login Here
+                </h1>
 
                 <div>
-                  <label className="label m-4">Email</label>
+                  <label className="block text-sm font-semibold mb-1">
+                    Email
+                  </label>
                   <input
                     type="email"
                     name="email"
                     value={input.email}
                     onChange={changeEventHandle}
-                    className="bg-white rounded-sm p-2"
+                    className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
                     autoComplete="email"
                     required
                   />
                 </div>
 
                 <div>
-                  <label className="label m-4">Role</label>
+                  <label className="block text-sm font-semibold mb-1">
+                    Role
+                  </label>
                   <input
                     type="text"
                     name="role"
                     value={input.role}
                     onChange={changeEventHandle}
-                    className="bg-white rounded-sm p-2"
+                    className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
                     autoComplete="organization"
                     required
                   />
                 </div>
 
                 <div>
-                  <label className="label m-4">Password</label>
+                  <label className="block text-sm font-semibold mb-1">
+                    Password
+                  </label>
                   <input
                     type="password"
                     name="password"
                     value={input.password}
                     onChange={changeEventHandle}
-                    className="bg-white rounded-sm p-2"
+                    className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
                     autoComplete="current-password"
                     required
                   />
                 </div>
 
-                <div className="m-4">
-                  <button type="submit" className="btn btn-primary me-2">
+                <div className="flex justify-between items-center mt-6">
+                  <button
+                    type="submit"
+                    className="bg-purple-600 text-white px-5 py-2 rounded-md hover:bg-purple-700 transition"
+                  >
                     Login
                   </button>
                   <Link to="/register">
-                    <button type="button" className="btn btn-primary">
+                    <button
+                      type="button"
+                      className="bg-gray-200 text-gray-800 px-4 py-2 rounded-md hover:bg-gray-300 transition"
+                    >
                       Create an Account
                     </button>
                   </Link>
